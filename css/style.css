@@ -1,0 +1,1202 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    overflow-x: hidden;
+    background-image: linear-gradient(#0f0c29, #302b63, #24243e)
+}
+
+
+/* <div class="inputNegara"> */
+.inputNegara {
+    position: absolute;
+    top: 200px;
+    left: 365px;
+    width: 400px;
+    height: 200px;
+    background-color: rgba(0, 0, 0, .6);
+    border: 2px solid white;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 3;
+    display: none;
+}
+.inputNegara label {
+    color: white;
+    font-size: 30px;
+}
+.inputNegara input {
+    margin: 20px auto;
+    width: 300px;
+    height: 50px;
+    background-color: rgba(225, 225, 225, .7);
+    border-radius: 20px;
+    color: white;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.inputNegara .button_p1 {display: none;}
+.inputNegara .button_p2 {display: none;}
+.inputNegara .button_p1, .inputNegara .button_p2 {
+    margin-left: 102px;
+    width: 200px;
+    height: 50px;
+    background-color: rgba(0, 250, 172, .5);
+    border: 1px solid white;
+    border-radius: 40px;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+
+}
+
+
+.kesempatan .bebasPenjara, .kesempatan .tambahUang {
+    position: absolute;
+    top: 200px;
+    left: 365px;
+    width: 300px;
+    height: 100px;
+    background-color: rgba(0, 0, 0, .6);
+    border: 2px solid white;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 100px;
+    color: white;
+    font-size: 30px;
+    z-index: 3;
+    display: none;
+}
+
+
+/* <div class="beliAtauTidak"> */
+.beliAtauTidak {
+    position: absolute;
+    top: 200px;
+    left: 365px;
+    width: 350px;
+    height: 180px;
+    background-color: rgba(0, 0, 0, .6);
+    border: 2px solid white;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 3;
+    display: none;
+}
+.beliAtauTidak .text {
+    margin-top: 20px;
+    color: white;
+    font-size: 30px;
+}
+.beliAtauTidak .button {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.beliAtauTidak .button .ya {background-color: rgba(0, 250, 172, .5);}
+.beliAtauTidak .button .tidak {background-color: rgba(184, 7, 7, 0.7);}
+.beliAtauTidak .button .ya, .beliAtauTidak .button .tidak {
+    margin-left: 5px;
+    width: 120px;
+    height: 50px;
+    border: 1px solid white;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+
+/* <div class="amerika"> */
+/* <div class="canada"> */
+/* <div class="brazil"> */
+/* <div class="chile"> */
+/* <div class="inggris"> */
+/* <div class="italia"> */
+/* <div class="rusia"> */
+/* <div class="jerman"> */
+/* <div class="afrika"> */
+/* <div class="india"> */
+/* <div class="mesir"> */
+/* <div class="indonesia"> */
+/* <div class="malaysia"> */
+/* <div class="thailand"> */
+/* <div class="singapura"> */
+.chile, .brazil, .canada, .amerika,
+.jerman, .rusia, .italia, .inggris,
+.afrika, .india, .mesir,
+.indonesia, .malaysia, .thailand, .singapura {
+    position: absolute;
+    top: 100px;
+    left: 550px;
+    width: 300px;
+    height: 500px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px 50px 50px 50px 50px 50px 50px 50px 50px;
+    grid-template-areas: "close"
+    "harga"
+    "hargadesa"
+    "hargakota"
+    "infopajak1"
+    "infopajak2"
+    "infopajak3"
+    "beli"
+    "beliDesaKota";
+    display: none;
+    z-index: 4;
+}
+.chile .close, .brazil .close, .canada .close, .amerika .close,
+.jerman .close, .rusia .close, .italia .close, .inggris .close,
+.afrika .close, .india .close, .mesir .close,
+.indonesia .close, .malaysia .close, .thailand .close, .singapura .close {
+    grid-area: close;
+    background-color: rgba(184, 7, 7, 0.7);
+    cursor: pointer;
+    display: none;
+}
+.chile .harga, .brazil .harga, .canada .harga, .amerika .harga,
+.jerman .harga, .rusia .close, .italia .harga, .inggris .harga,
+.afrika .harga, .india .harga, .mesir .harga, 
+.indonesia .harga, .malaysia .harga, .thailand .harga, .singapura .harga {
+    grid-area: harga;
+}
+.amerika .hargaDesa, 
+.canada .hargaDesa, 
+.brazil .hargaDesa, 
+.chile .hargaDesa, 
+.inggris .hargaDesa, 
+.italia .hargaDesa, 
+.rusia .hargaDesa, 
+.jerman .hargaDesa, 
+.afrika .hargaDesa, 
+.india .hargaDesa, 
+.mesir .hargaDesa,
+.indonesia .hargaDesa, 
+.malaysia .hargaDesa, 
+.thailand .hargaDesa, 
+.singapura .hargaDesa {
+    grid-area: hargadesa;
+}
+.amerika .hargaKota,
+.canada .hargaKota,
+.brazil .hargaKota,
+.chile .hargaKota,
+.inggris .hargaKota,
+.italia .hargaKota,
+.rusia .hargaKota,
+.jerman .hargaKota,
+.afrika .hargaKota, 
+.india .hargaKota, 
+.mesir .hargaKota,
+.indonesia .hargaKota, 
+.malaysia .hargaKota, 
+.thailand .hargaKota, 
+.singapura .hargaKota {
+    grid-area: hargakota;
+}
+.amerika .pajak1, 
+.canada .pajak1, 
+.brazil .pajak1, 
+.chile .pajak1, 
+.inggris .pajak1, 
+.italia .pajak1, 
+.rusia .pajak1, 
+.jerman .pajak1, 
+.afrika .pajak1, 
+.india .pajak1, 
+.mesir .pajak1,
+.indonesia .pajak1, 
+.malaysia .pajak1, 
+.thailand .pajak1, 
+.singapura .pajak1 {
+    grid-area: infopajak1;
+}
+.amerika .pajak2, 
+.canada .pajak2, 
+.brazil .pajak2, 
+.chile .pajak2, 
+.inggris .pajak2, 
+.italia .pajak2, 
+.rusia .pajak2, 
+.jerman .pajak2, 
+.afrika .pajak2, 
+.india .pajak2, 
+.mesir .pajak2,
+.indonesia .pajak2, 
+.malaysia .pajak2, 
+.thailand .pajak2, 
+.singapura .pajak2 {
+    grid-area: infopajak2;
+}
+.amerika .pajak3, 
+.canada .pajak3, 
+.brazil .pajak3, 
+.chile .pajak3, 
+.inggris .pajak3, 
+.italia .pajak3, 
+.rusia .pajak3, 
+.jerman .pajak3, 
+.afrika .pajak3, 
+.india .pajak3, 
+.mesir .pajak3,
+.indonesia .pajak3, 
+.malaysia .pajak3, 
+.thailand .pajak3, 
+.singapura .pajak3 {
+    grid-area: infopajak3;
+}
+/* BELI PULAU */
+.amerika .beli-player1, 
+.canada .beli-player1, 
+.brazil .beli-player1, 
+.chile .beli-player1, 
+.inggris .beli-player1, 
+.italia .beli-player1, 
+.rusia .beli-player1, 
+.jerman .beli-player1, 
+.afrika .beli-player1, 
+.india .beli-player1, 
+.mesir .beli-player1, 
+.indonesia .beli-player1, 
+.malaysia .beli-player1, 
+.thailand .beli-player1, 
+.singapura .beli-player1 {
+    grid-area: beli;
+    display: none;
+}
+.amerika .beli-player2, 
+.canada .beli-player2, 
+.brazil .beli-player2, 
+.chile .beli-player2, 
+.inggris .beli-player2, 
+.italia .beli-player2, 
+.rusia .beli-player2, 
+.jerman .beli-player2, 
+.afrika .beli-player2, 
+.india .beli-player2, 
+.mesir .beli-player2, 
+.indonesia .beli-player2, 
+.malaysia .beli-player2, 
+.thailand .beli-player2, 
+.singapura .beli-player2 {
+    grid-area: beli;
+    display: none;
+}
+/* BELI RUMAH */
+.amerika .beliDesa-player1, 
+.canada .beliDesa-player1, 
+.brazil .beliDesa-player1, 
+.chile .beliDesa-player1, 
+.inggris .beliDesa-player1, 
+.italia .beliDesa-player1, 
+.rusia .beliDesa-player1, 
+.jerman .beliDesa-player1, 
+.afrika .beliDesa-player1, 
+.india .beliDesa-player1, 
+.mesir .beliDesa-player1, 
+.indonesia .beliDesa-player1, 
+.malaysia .beliDesa-player1, 
+.thailand .beliDesa-player1, 
+.singapura .beliDesa-player1 {
+    grid-area: beliDesaKota;
+    display: none;
+}
+.amerika .beliDesa-player2, 
+.canada .beliDesa-player2, 
+.brazil .beliDesa-player2, 
+.chile .beliDesa-player2, 
+.inggris .beliDesa-player2, 
+.italia .beliDesa-player2, 
+.rusia .beliDesa-player2, 
+.jerman .beliDesa-player2, 
+.afrika .beliDesa-player2, 
+.india .beliDesa-player2, 
+.mesir .beliDesa-player2, 
+.indonesia .beliDesa-player2, 
+.malaysia .beliDesa-player2, 
+.thailand .beliDesa-player2, 
+.singapura .beliDesa-player2 {
+    grid-area: beliDesaKota;
+    display: none;
+}
+.amerika .beliKota-player1, 
+.canada .beliKota-player1, 
+.brazil .beliKota-player1, 
+.chile .beliKota-player1, 
+.inggris .beliKota-player1, 
+.italia .beliKota-player1, 
+.rusia .beliKota-player1, 
+.jerman .beliKota-player1, 
+.afrika .beliKota-player1, 
+.india .beliKota-player1, 
+.mesir .beliKota-player1, 
+.indonesia .beliKota-player1, 
+.malaysia .beliKota-player1, 
+.thailand .beliKota-player1, 
+.singapura .beliKota-player1 {
+    grid-area: beliDesaKota;
+    display: none;
+}
+.amerika .beliKota-player2, 
+.canada .beliKota-player2, 
+.brazil .beliKota-player2, 
+.chile .beliKota-player2, 
+.inggris .beliKota-player2, 
+.italia .beliKota-player2, 
+.rusia .beliKota-player2, 
+.jerman .beliKota-player2, 
+.afrika .beliKota-player2, 
+.india .beliKota-player2, 
+.mesir .beliKota-player2, 
+.indonesia .beliKota-player2, 
+.malaysia .beliKota-player2, 
+.thailand .beliKota-player2, 
+.singapura .beliKota-player2 {
+    grid-area: beliDesaKota;
+    display: none;
+}
+.amerika .beli-player1, .amerika .beli-player2, /* AMERIKA */
+.amerika .beliDesa-player1, .amerika .beliDesa-player2,
+.amerika .beliKota-player1, .amerika .beliKota-player2, 
+.canada .beli-player1, .canada .beli-player2, /* CANADA */
+.canada .beliDesa-player1, .canada .beliDesa-player2,
+.canada .beliKota-player1, .canada .beliKota-player2, 
+.brazil .beli-player1, .brazil .beli-player2, /* BRAZIL */
+.brazil .beliDesa-player1, .brazil .beliDesa-player2,
+.brazil .beliKota-player1, .brazil .beliKota-player2, 
+.chile .beli-player1, .chile .beli-player2, /* CHILE */
+.chile .beliDesa-player1, .chile .beliDesa-player2,
+.chile .beliKota-player1, .chile .beliKota-player2, 
+.inggris .beli-player1, .inggris .beli-player2, /* INGGRIS */
+.inggris .beliDesa-player1, .inggris .beliDesa-player2,
+.inggris .beliKota-player1, .inggris .beliKota-player2, 
+.italia .beli-player1, .italia .beli-player2, /* ITALIA */
+.italia .beliDesa-player1, .italia .beliDesa-player2,
+.italia .beliKota-player1, .italia .beliKota-player2, 
+.rusia .beli-player1, .rusia .beli-player2, /* RUSIA */
+.rusia .beliDesa-player1, .rusia .beliDesa-player2,
+.rusia .beliKota-player1, .rusia .beliKota-player2, 
+.jerman .beli-player1, .jerman .beli-player2, /* JERMAN */
+.jerman .beliDesa-player1, .jerman .beliDesa-player2,
+.jerman .beliKota-player1, .jerman .beliKota-player2, 
+.afrika .beli-player1, .afrika .beli-player2, /* AFRIKA */
+.afrika .beliDesa-player1, .afrika .beliDesa-player2,
+.afrika .beliKota-player1, .afrika .beliKota-player2, 
+.india .beli-player1, .india .beli-player2, /* INDIA */
+.india .beliDesa-player1, .india .beliDesa-player2,
+.india .beliKota-player1, .india .beliKota-player2, 
+.mesir .beli-player1, .mesir .beli-player2, /* MESIR */
+.mesir .beliDesa-player1, .mesir .beliDesa-player2,
+.mesir .beliKota-player1, .mesir .beliKota-player2, 
+.indonesia .beli-player1, .indonesia .beli-player2, /* INDONESIA */
+.indonesia .beliDesa-player1, .indonesia .beliDesa-player2,
+.indonesia .beliKota-player1, .indonesia .beliKota-player2, 
+.malaysia .beli-player1, .malaysia .beli-player2, /* MALAYSIA */
+.malaysia .beliDesa-player1, .malaysia .beliDesa-player2,
+.malaysia .beliKota-player1, .malaysia .beliKota-player2, 
+.thailand .beli-player1, .thailand .beli-player2, /* THAILAND */
+.thailand .beliDesa-player1, .thailand .beliDesa-player2,
+.thailand .beliKota-player1, .thailand .beliKota-player2,
+.singapura .beli-player1, .singapura .beli-player2, /* SINGAPURA */
+.singapura .beliDesa-player1, .singapura .beliDesa-player2,
+.singapura .beliKota-player1, .singapura .beliKota-player2 {
+    background-color: rgba(7, 204, 27, 0.7);
+    border: 1px solid white;
+    cursor: pointer;
+}
+.amerika .harga, .amerika .hargaDesa, .amerika .hargaKota, /* AMERIKA */ 
+.amerika .pajak1, .amerika .pajak2, .amerika .pajak3, 
+.canada .harga, .canada .hargaDesa, .canada .hargaKota, /* CANADA */ 
+.canada .pajak1, .canada .pajak2, .canada .pajak3, 
+.brazil .harga, .brazil .hargaDesa, .brazil .hargaKota, /* BRAZIL */ 
+.brazil .pajak1, .brazil .pajak2, .brazil .pajak3, 
+.chile .harga, .chile .hargaDesa, .chile .hargaKota, /* CHILE */ 
+.chile .pajak1, .chile .pajak2, .chile .pajak3, 
+.inggris .harga, .inggris .hargaDesa, .inggris .hargaKota, /* INGGRIS */ 
+.inggris .pajak1, .inggris .pajak2, .inggris .pajak3, 
+.italia .harga, .italia .hargaDesa, .italia .hargaKota, /* ITALIA */ 
+.italia .pajak1, .italia .pajak2, .italia .pajak3, 
+.rusia .harga, .rusia .hargaDesa, .rusia .hargaKota, /* RUSIA */ 
+.rusia .pajak1, .rusia .pajak2, .rusia .pajak3, 
+.jerman .harga, .jerman .hargaDesa, .jerman .hargaKota, /* JERMAN */ 
+.jerman .pajak1, .jerman .pajak2, .jerman .pajak3, 
+.afrika .harga, .afrika .hargaDesa, .afrika .hargaKota, /* AFRIKA */ 
+.afrika .pajak1, .afrika .pajak2, .afrika .pajak3, 
+.india .harga, .india .hargaDesa, .india .hargaKota, /* INDIA */ 
+.india .pajak1, .india .pajak2, .india .pajak3, 
+.mesir .harga, .mesir .hargaDesa, .mesir .hargaKota, /* MESIR */ 
+.mesir .pajak1, .mesir .pajak2, .mesir .pajak3, 
+.indonesia .harga, .indonesia .hargaDesa, .indonesia .hargaKota, /* INDONESIA */ 
+.indonesia .pajak1, .indonesia .pajak2, .indonesia .pajak3, 
+.malaysia .harga, .malaysia .hargaDesa, .malaysia .hargaKota, /* MALAYSIA */ 
+.malaysia .pajak1, .malaysia .pajak2, .malaysia .pajak3, 
+.thailand .harga, .thailand .hargaDesa, .thailand .hargaKota, /* THAILAND */
+.thailand .pajak1, .thailand .pajak2, .thailand .pajak3,
+.singapura .harga, .singapura .hargaDesa, .singapura .hargaKota, /* SINGAPURA */ 
+.singapura .pajak1, .singapura .pajak2, .singapura .pajak3 
+{background-color: rgba(2, 2, 2, .75);}
+.amerika .close, .amerika .harga, .amerika .hargaDesa, .amerika .hargaKota, /* AMERIKA */
+.amerika .pajak1, .amerika .pajak2, .amerika .pajak3, .amerika .beli-player1,
+.amerika .beli-player2, .amerika .beliDesa-player1, .amerika .beliDesa-player2,
+.amerika .beliKota-player1, .amerika .beliKota-player2,
+.canada .close, .canada .harga, .canada .hargaDesa, .canada .hargaKota, /* CANADA */
+.canada .pajak1, .canada .pajak2, .canada .pajak3, .canada .beli-player1,
+.canada .beli-player2, .canada .beliDesa-player1, .canada .beliDesa-player2,
+.canada .beliKota-player1, .canada .beliKota-player2,
+.brazil .close, .brazil .harga, .brazil .hargaDesa, .brazil .hargaKota, /* BRAZIL */
+.brazil .pajak1, .brazil .pajak2, .brazil .pajak3, .brazil .beli-player1,
+.brazil .beli-player2, .brazil .beliDesa-player1, .brazil .beliDesa-player2,
+.brazil .beliKota-player1, .brazil .beliKota-player2,
+.chile .close, .chile .harga, .chile .hargaDesa, .chile .hargaKota, /* CHILE */
+.chile .pajak1, .chile .pajak2, .chile .pajak3, .chile .beli-player1,
+.chile .beli-player2, .chile .beliDesa-player1, .chile .beliDesa-player2,
+.chile .beliKota-player1, .chile .beliKota-player2,
+.inggris .close, .inggris .harga, .inggris .hargaDesa, .inggris .hargaKota, /* INGGRIS */
+.inggris .pajak1, .inggris .pajak2, .inggris .pajak3, .inggris .beli-player1,
+.inggris .beli-player2, .inggris .beliDesa-player1, .inggris .beliDesa-player2,
+.inggris .beliKota-player1, .inggris .beliKota-player2,
+.italia .close, .italia .harga, .italia .hargaDesa, .italia .hargaKota, /* ITALIA */
+.italia .pajak1, .italia .pajak2, .italia .pajak3, .italia .beli-player1,
+.italia .beli-player2, .italia .beliDesa-player1, .italia .beliDesa-player2,
+.italia .beliKota-player1, .italia .beliKota-player2,
+.rusia .close, .rusia .harga, .rusia .hargaDesa, .rusia .hargaKota, /* RUSIA */
+.rusia .pajak1, .rusia .pajak2, .rusia .pajak3, .rusia .beli-player1,
+.rusia .beli-player2, .rusia .beliDesa-player1, .rusia .beliDesa-player2,
+.rusia .beliKota-player1, .rusia .beliKota-player2,
+.jerman .close, .jerman .harga, .jerman .hargaDesa, .jerman .hargaKota, /* JERMAN */
+.jerman .pajak1, .jerman .pajak2, .jerman .pajak3, .jerman .beli-player1,
+.jerman .beli-player2, .jerman .beliDesa-player1, .jerman .beliDesa-player2,
+.jerman .beliKota-player1, .jerman .beliKota-player2,
+.afrika .close, .afrika .harga, .afrika .hargaDesa, .afrika .hargaKota, /* AFRIKA */
+.afrika .pajak1, .afrika .pajak2, .afrika .pajak3, .afrika .beli-player1,
+.afrika .beli-player2, .afrika .beliDesa-player1, .afrika .beliDesa-player2,
+.afrika .beliKota-player1, .afrika .beliKota-player2,
+.india .close, .india .harga, .india .hargaDesa, .india .hargaKota, /* INDIA */
+.india .pajak1, .india .pajak2, .india .pajak3, .india .beli-player1,
+.india .beli-player2, .india .beliDesa-player1, .india .beliDesa-player2,
+.india .beliKota-player1, .india .beliKota-player2,
+.mesir .close, .mesir .harga, .mesir .hargaDesa, .mesir .hargaKota, /* MESIR */
+.mesir .pajak1, .mesir .pajak2, .mesir .pajak3, .mesir .beli-player1,
+.mesir .beli-player2, .mesir .beliDesa-player1, .mesir .beliDesa-player2,
+.mesir .beliKota-player1, .mesir .beliKota-player2,
+.indonesia .close, .indonesia .harga, .indonesia .hargaDesa, .indonesia .hargaKota, /* INDONESIA */
+.indonesia .pajak1, .indonesia .pajak2, .indonesia .pajak3, .indonesia .beli-player1,
+.indonesia .beli-player2, .indonesia .beliDesa-player1, .indonesia .beliDesa-player2,
+.indonesia .beliKota-player1, .indonesia .beliKota-player2,
+.malaysia .close, .malaysia .harga, .malaysia .hargaDesa, .malaysia .hargaKota, /* MALAYSIA */
+.malaysia .pajak1, .malaysia .pajak2, .malaysia .pajak3, .malaysia .beli-player1,
+.malaysia .beli-player2, .malaysia .beliDesa-player1, .malaysia .beliDesa-player2,
+.malaysia .beliKota-player1, .malaysia .beliKota-player2,
+.thailand .close, .thailand .harga, .thailand .hargaDesa, .thailand .hargaKota, /* THAILAND */
+.thailand .pajak1, .thailand .pajak2, .thailand .pajak3, .thailand .beli-player1,
+.thailand .beli-player2, .thailand .beliDesa-player1, .thailand .beliDesa-player2,
+.thailand .beliKota-player1, .thailand .beliKota-player2,
+.singapura .close, .singapura .harga, .singapura .hargaDesa, .singapura .hargaKota, /* SINGAPURA */
+.singapura .pajak1, .singapura .pajak2, .singapura .pajak3, .singapura .beli-player1,
+.singapura .beli-player2, .singapura .beliDesa-player1, .singapura .beliDesa-player2,
+.singapura .beliKota-player1, .singapura .beliKota-player2
+{
+    width: 300px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 40px;
+    color: white;
+}
+/* <div class="desa_kota_amerika"> */
+/* <div class="desa_kota_canada"> */
+/* <div class="desa_kota_brazil"> */
+/* <div class="desa_kota_chile"> */
+/* <div class="desa_kota_inggris"> */
+/* <div class="desa_kota_italia"> */
+/* <div class="desa_kota_rusia"> */
+/* <div class="desa_kota_jerman"> */
+/* <div class="desa_kota_afrika"> */
+/* <div class="desa_kota_india"> */
+/* <div class="desa_kota_mesir"> */
+/* <div class="desa_kota_indonesia"> */
+/* <div class="desa_kota_malaysia"> */
+/* <div class="desa_kota_thailand"> */
+/* <div class="desa_kota_singapura"> */
+.desa_kota_amerika .desa1, .desa_kota_amerika .desa2, /* AMERIKA */
+.desa_kota_amerika .desa3,  
+.desa_kota_amerika .kota1, .desa_kota_amerika .kota2,  
+.desa_kota_canada .desa1, .desa_kota_canada .desa2, /* CANADA */
+.desa_kota_canada .desa3,  
+.desa_kota_canada .kota1, .desa_kota_canada .kota2,  
+.desa_kota_brazil .desa1, .desa_kota_brazil .desa2, /* BRAZIL */
+.desa_kota_brazil .desa3,  
+.desa_kota_brazil .kota1, .desa_kota_brazil .kota2,
+.desa_kota_chile .desa1, .desa_kota_chile .desa2, /* CHILE */
+.desa_kota_chile .desa3,  
+.desa_kota_chile .kota1, .desa_kota_chile .kota2,  
+.desa_kota_inggris .desa1, .desa_kota_inggris .desa2, /* INGGRIS */
+.desa_kota_inggris .desa3,  
+.desa_kota_inggris .kota1, .desa_kota_inggris .kota2,    
+.desa_kota_italia .desa1, .desa_kota_italia .desa2, /* ITALIA */
+.desa_kota_italia .desa3,  
+.desa_kota_italia .kota1, .desa_kota_italia .kota2,  
+.desa_kota_rusia .desa1, .desa_kota_rusia .desa2, /* RUSIA */
+.desa_kota_rusia .desa3,  
+.desa_kota_rusia .kota1, .desa_kota_rusia .kota2,  
+.desa_kota_jerman .desa1, .desa_kota_jerman .desa2, /* JERMAN */
+.desa_kota_jerman .desa3,  
+.desa_kota_jerman .kota1, .desa_kota_jerman .kota2,  
+.desa_kota_afrika .desa1, .desa_kota_afrika .desa2, /* AFRIKA */
+.desa_kota_afrika .desa3,  
+.desa_kota_afrika .kota1, .desa_kota_afrika .kota2,  
+.desa_kota_india .desa1, .desa_kota_india .desa2, /* INDIA */
+.desa_kota_india .desa3,  
+.desa_kota_india .kota1, .desa_kota_india .kota2,  
+.desa_kota_mesir .desa1, .desa_kota_mesir .desa2, /* MESIR */
+.desa_kota_mesir .desa3,  
+.desa_kota_mesir .kota1, .desa_kota_mesir .kota2,  
+.desa_kota_indonesia .desa1, .desa_kota_indonesia .desa2, /* INDONESIA */
+.desa_kota_indonesia .desa3,   
+.desa_kota_indonesia .kota1, .desa_kota_indonesia .kota2,  
+.desa_kota_malaysia .desa1, .desa_kota_malaysia .desa2, /* MALAYSIA */
+.desa_kota_malaysia .desa3,  
+.desa_kota_malaysia .kota1, .desa_kota_malaysia .kota2,  
+.desa_kota_thailand .desa1, .desa_kota_thailand .desa2, /* THAILAND */
+.desa_kota_thailand .desa3,   
+.desa_kota_thailand .kota1, .desa_kota_thailand .kota2,
+.desa_kota_singapura .desa1, .desa_kota_singapura .desa2, /* SINGAPURA */
+.desa_kota_singapura .desa3,  
+.desa_kota_singapura .kota1, .desa_kota_singapura .kota2    
+{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: none;
+}
+/* RUMAH 1 */
+.desa_kota_amerika .desa1 {
+    top: 465px;
+    left: 835px;
+} 
+.desa_kota_canada .desa1 {
+    top: 365px;
+    left: 835px;
+} 
+.desa_kota_brazil .desa1 {
+    top: 265px;
+    left: 835px;
+} 
+.desa_kota_chile .desa1 {
+    top: 165px;
+    left: 835px;
+} 
+.desa_kota_inggris .desa1 {
+    top: 65px;
+    left: 735px;
+} 
+.desa_kota_italia .desa1 {
+    top: 65px;
+    left: 635px;
+} 
+.desa_kota_rusia .desa1 {
+    top: 65px;
+    left: 535px;
+} 
+.desa_kota_jerman .desa1 {
+    top: 65px;
+    left: 435px;
+} 
+.desa_kota_afrika .desa1 {
+    top: 165px;
+    left: 335px;
+} 
+.desa_kota_india .desa1 {
+    top: 365px;
+    left: 335px;
+} 
+.desa_kota_mesir .desa1 {
+    top: 465px;
+    left: 335px;
+} 
+.desa_kota_indonesia .desa1 {
+    top: 565px;
+    left: 735px;
+} 
+.desa_kota_malaysia .desa1 {
+    top: 565px;
+    left: 635px;
+} 
+.desa_kota_thailand .desa1 {
+    top: 565px;
+    left: 535px;
+}
+.desa_kota_singapura .desa1 {
+    top: 565px;
+    left: 435px;
+}
+/* RUMAH 2 */
+.desa_kota_amerika .desa2 {
+    top: 465px;
+    left: 865px;
+} 
+.desa_kota_canada .desa2 {
+    top: 365px;
+    left: 865px;
+} 
+.desa_kota_brazil .desa2 {
+    top: 265px;
+    left: 865px;
+} 
+.desa_kota_chile .desa2 {
+    top: 165px;
+    left: 865px;
+} 
+.desa_kota_inggris .desa2 {
+    top: 65px;
+    left: 765px;
+} 
+.desa_kota_italia .desa2 {
+    top: 65px;
+    left: 665px;
+} 
+.desa_kota_rusia .desa2 {
+    top: 65px;
+    left: 565px;
+}
+.desa_kota_jerman .desa2 {
+    top: 65px;
+    left: 465px;
+} 
+.desa_kota_afrika .desa2 {
+    top: 165px;
+    left: 365px;
+} 
+.desa_kota_india .desa2 {
+    top: 365px;
+    left: 365px;
+} 
+.desa_kota_mesir .desa2 {
+    top: 465px;
+    left: 365px;
+} 
+.desa_kota_indonesia .desa2 {
+    top: 565px;
+    left: 765px;
+} 
+.desa_kota_malaysia .desa2 {
+    top: 565px;
+    left: 665px;
+} 
+.desa_kota_thailand .desa2 {
+    top: 565px;
+    left: 565px;
+}
+.desa_kota_singapura .desa2 {
+    top: 565px;
+    left: 465px;
+}
+/* RUMAH 3 */
+.desa_kota_amerika .desa3 {
+    top: 465px;
+    left: 895px;
+} 
+.desa_kota_canada .desa3 {
+    top: 365px;
+    left: 895px;
+} 
+.desa_kota_brazil .desa3 {
+    top: 265px;
+    left: 895px;
+}
+.desa_kota_chile .desa3 {
+    top: 165px;
+    left: 895px;
+}
+.desa_kota_inggris .desa3 {
+    top: 65px;
+    left: 795px;
+} 
+.desa_kota_italia .desa3 {
+    top: 65px;
+    left: 695px;
+} 
+.desa_kota_rusia .desa3 {
+    top: 65px;
+    left: 595px;
+} 
+.desa_kota_jerman .desa3 {
+    top: 65px;
+    left: 495px;
+} 
+.desa_kota_afrika .desa3 {
+    top: 165px;
+    left: 395px;
+} 
+.desa_kota_india .desa3 {
+    top: 365px;
+    left: 395px;
+} 
+.desa_kota_mesir .desa3 {
+    top: 465px;
+    left: 395px;
+} 
+.desa_kota_indonesia .desa3 {
+    top: 565px;
+    left: 795px;
+} 
+.desa_kota_malaysia .desa3 {
+    top: 565px;
+    left: 695px;
+} 
+.desa_kota_thailand .desa3 {
+    top: 565px;
+    left: 595px;
+}
+.desa_kota_singapura .desa3 {
+    top: 565px;
+    left: 495px;
+}
+/* KOTA 1 */
+.desa_kota_amerika .kota1 {
+    top: 495px;
+    left: 850px;
+}
+.desa_kota_canada .kota1 {
+    top: 495px;
+    left: 850px;
+}
+.desa_kota_brazil .kota1 {
+    top: 295px;
+    left: 850px;
+}
+.desa_kota_chile .kota1 {
+    top: 195px;
+    left: 850px;
+}
+.desa_kota_inggris .kota1 {
+    top: 95px;
+    left: 750px;
+} 
+.desa_kota_italia .kota1 {
+    top: 95px;
+    left: 650px;
+} 
+.desa_kota_rusia .kota1 {
+    top: 95px;
+    left: 550px;
+} 
+.desa_kota_jerman .kota1 {
+    top: 95px;
+    left: 450px;
+} 
+.desa_kota_afrika .kota1 {
+    top: 195px;
+    left: 350px;
+} 
+.desa_kota_india .kota1 {
+    top: 395px;
+    left: 350px;
+} 
+.desa_kota_mesir .kota1 {
+    top: 495px;
+    left: 350px;
+} 
+.desa_kota_indonesia .kota1 {
+    top: 595px;
+    left: 750px;
+} 
+.desa_kota_malaysia .kota1 {
+    top: 595px;
+    left: 650px;
+} 
+.desa_kota_thailand .kota1 {
+    top: 595px;
+    left: 550px;
+}
+.desa_kota_singapura .kota1 {
+    top: 595px;
+    left: 450px;
+}
+/* KOTA 2 */
+.desa_kota_amerika .kota2 {
+    top: 495px;
+    left: 880px;
+} 
+.desa_kota_canada .kota2 {
+    top: 395px;
+    left: 880px;
+} 
+.desa_kota_brazil .kota2 {
+    top: 295px;
+    left: 880px;
+}
+.desa_kota_chile .kota2 {
+    top: 195px;
+    left: 880px;
+}
+.desa_kota_inggris .kota2 {
+    top: 95px;
+    left: 780px;
+} 
+.desa_kota_italia .kota2 {
+    top: 95px;
+    left: 680px;
+} 
+.desa_kota_rusia .kota2 {
+    top: 95px;
+    left: 580px;
+} 
+.desa_kota_jerman .kota2 {
+    top: 95px;
+    left: 480px;
+} 
+.desa_kota_afrika .kota2 {
+    top: 195px;
+    left: 780px;
+} 
+.desa_kota_india .kota2 {
+    top: 395px;
+    left: 380px;
+} 
+.desa_kota_mesir .kota2 {
+    top: 495px;
+    left: 380px;
+} 
+.desa_kota_indonesia .kota2 {
+    top: 595px;
+    left: 780px;
+} 
+.desa_kota_malaysia .kota2 {
+    top: 595px;
+    left: 680px;
+}  
+.desa_kota_thailand .kota2 {
+    top: 595px;
+    left: 580px;
+}
+.desa_kota_singapura .kota2 {
+    top: 595px;
+    left: 480px;
+}
+/* AMERIKA */
+.desa_kota_amerika .desa1, .desa_kota_amerika .desa2, .desa_kota_amerika .desa3,
+/* CANADA */
+.desa_kota_canada .desa1, .desa_kota_canada .desa2, .desa_kota_canada .desa3,
+/* BRAZIL */
+.desa_kota_brazil .desa1, .desa_kota_brazil .desa2, .desa_kota_brazil .desa3,
+/* CHILE */
+.desa_kota_chile .desa1, .desa_kota_chile .desa2, .desa_kota_chile .desa3,
+/* INGGRIS */
+.desa_kota_inggris .desa1, .desa_kota_inggris .desa2, .desa_kota_inggris .desa3,
+/* ITALIA */
+.desa_kota_italia .desa1, .desa_kota_italia .desa2, .desa_kota_italia .desa3,
+/* RUSIA */
+.desa_kota_rusia .desa1, .desa_kota_rusia .desa2, .desa_kota_rusia .desa3,
+/* JERMAN */
+.desa_kota_jerman .desa1, .desa_kota_jerman .desa2, .desa_kota_jerman .desa3,
+/* AFRIKA */
+.desa_kota_afrika .desa1, .desa_kota_afrika .desa2, .desa_kota_afrika .desa3,
+/* INDIA */
+.desa_kota_india .desa1, .desa_kota_india .desa2, .desa_kota_india .desa3,
+/* MESIR */
+.desa_kota_mesir .desa1, .desa_kota_mesir .desa2, .desa_kota_mesir .desa3,
+/* INDONESIA */
+.desa_kota_indonesia .desa1, .desa_kota_indonesia .desa2, .desa_kota_indonesia .desa3,
+/* MALAYSIA */
+.desa_kota_malaysia .desa1, .desa_kota_malaysia .desa2, .desa_kota_malaysia .desa3,
+/* THAILAND */
+.desa_kota_thailand .desa1, .desa_kota_thailand .desa2, .desa_kota_thailand .desa3,
+/* SINGAPURA */
+.desa_kota_singapura .desa1, .desa_kota_singapura .desa2, .desa_kota_singapura .desa3 {
+    background-color: greenyellow;
+    text-align: center;
+}
+/* AMERIKA */
+.desa_kota_amerika .kota1, .desa_kota_amerika .kota2,
+/* CANADA */
+.desa_kota_canada .kota1, .desa_kota_canada .kota2,
+/* BRAZIL */
+.desa_kota_brazil .kota1, .desa_kota_brazil .kota2,
+/* CHILE */
+.desa_kota_chile .kota1, .desa_kota_chile .kota2,
+/* INGGRIS */
+.desa_kota_inggris .kota1, .desa_kota_inggris .kota2,
+/* ITALIA */
+.desa_kota_italia .kota1, .desa_kota_italia .kota2,
+/* RUSIA */
+.desa_kota_rusia .kota1, .desa_kota_rusia .kota2,
+/* JERMAN */
+.desa_kota_jerman .kota1, .desa_kota_jerman .kota2,
+/* AFRIKA */
+.desa_kota_jerman .kota1, .desa_kota_jerman .kota2,
+/* INDIA */
+.desa_kota_india .kota1, .desa_kota_india .kota2,
+/* MESIR */
+.desa_kota_mesir .kota1, .desa_kota_mesir .kota2,
+/* INDONESIA */
+.desa_kota_indonesia .kota1, .desa_kota_indonesia .kota2,
+/* MALAYSIA */
+.desa_kota_malaysia .kota1, .desa_kota_malaysia .kota2,
+/* THAILAND */
+.desa_kota_thailand .kota1, .desa_kota_thailand .kota2, 
+/* SINGAPURA */
+.desa_kota_singapura .kota1, .desa_kota_singapura .kota2
+{
+    background-color: orange;
+    text-align: center;
+}
+
+/* <div class="fotoPlayer"> */
+.playerProfile1 {top: 50px;}
+.playerProfile2 {top: 300px;}
+.playerProfile1, .playerProfile2 {
+    position: absolute;
+    right: 5px;
+    width: 230px;
+    height: 200px;
+    display: grid;
+    grid-template-columns: 120px 110px;
+    grid-template-rows: 150px 50px;
+    grid-template-areas: "profil nama"
+    "uang uang";
+}
+.photo_playerProfile1 {background-image: url("../img/megaChan.png");}
+.photo_playerProfile2 {background-image: url("../img/puan.png");}
+.photo_playerProfile1, .photo_playerProfile2 {
+    grid-area: profil;
+    width: 120px;
+    height: 150px;
+    border: 1px solid white;
+    border-radius: 50%;
+    box-sizing: border-box;
+}
+.nama_playerProfile1, .nama_playerProfile2 {
+    grid-area: nama;
+    width: 110px;
+    height: 150px;
+    background: linear-gradient(45deg, rgba(255, 255, 255, .2), rgba(255, 192, 203, .8));
+    border: 2px solid black;
+    border-radius: 10px;
+    text-align: center;
+    box-sizing: border-box;
+}
+.money_playerProfile1, .money_playerProfile2 {
+    grid-area: uang;
+    width: 230px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, .4);
+    border: 1px solid white;
+    border-radius: 30px;
+    text-align: center;
+    color: white;
+    font-size: 40px;
+    box-sizing: border-box;
+}
+
+/* <div class="lingkaranPlayer"> */
+.lingkaranPlayer .player1 {
+    z-index: 1;
+    background: linear-gradient(#a18cd1, #fac2eb);
+}
+.lingkaranPlayer .player2 {
+    z-index: 2;
+    background: linear-gradient(#483378, #f10ab4);
+}
+.lingkaranPlayer .player1, .lingkaranPlayer .player2 {
+    position: absolute;
+    top: 565px;
+    left: 835px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    font-size: 40px;
+}
+
+
+/* <div class="monopoli"> */
+/* display: flex */
+.plusd12,
+.dices,
+.dices .dice1, .dices .dice2,
+.lingkaranPlayer .player1, .lingkaranPlayer .player2,
+.nama_playerProfile1, .nama_playerProfile2,
+.money_playerprofile1, .money_playerprofile2
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+
+.monopoli {
+    margin-top: 50px;
+    margin-left: 20px;
+    width: 900px;
+    height: 700px;
+    display: grid;
+    grid-template-columns: 280px 20px 600px;
+    grid-template-rows: 600px;
+    grid-template-areas: 
+    "dices zonk main_board";
+}
+.dices { /* <div class="dices"> */
+    grid-area: dices;
+    width: 280px;
+    height: 600px;
+    /* background: linear-gradient(0deg, #CFD9DF, #E2FBF0); */
+    background-color: rgba(255, 255, 255, .1);
+    border: 1px solid white;
+    flex-direction: column;
+
+}
+.plusd12 {
+    margin-top: 10px;
+    width: 250px;
+    height: 160px;
+    background: linear-gradient(45deg, #E0C3FC, #8EC5FC);
+    border-radius: 20px;
+    text-align: center;
+    font-size: 60px;
+}
+.dices .dice1, .dices .dice2 {
+    margin-top: 10px;
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(45deg, rgba(0, 250, 172, .5), rgba(130, 52, 203, .5));
+    border-radius: 50%;
+    text-align: center;
+    font-size: 50px;
+    cursor: pointer;
+    animation: none;
+}
+.main_board {/* <div class="main_board"> */
+    grid-area: main_board;
+    width: 600px;
+    height: 600px;
+    /* background: linear-gradient(0deg, #CFD9DF, #E2FBF0); */
+    background-color: rgba(255, 255, 255, .3);
+    border: 1px solid white;
+    display: grid;
+    grid-template-columns: 1fr 400px 1fr;
+    grid-template-rows: 1fr 400px 1fr;
+    grid-template-areas: "horizontal1 horizontal1 horizontal1"
+    "vertical1 zonk2 vertical2"
+    "horizontal2 horizontal2 horizontal2";
+}  
+.horizontal1-class1 {grid-area: horizontal1;} /* class1 */
+.horizontal2-class1 {grid-area: horizontal2;}
+.horizontal1-class2 {grid-area: horizontal1;} /* class2 */
+.horizontal2-class2 {grid-area: horizontal2;}
+.horizontal1-class1, .horizontal2-class1,
+.horizontal1-class2, .horizontal2-class2 {
+    justify-content: space-around;
+    cursor: default;
+}
+.vertical1-class1 {grid-area: vertical1;} /* class1 */
+.vertical2-class1 {grid-area: vertical2;}
+.vertical1-class2 {grid-area: vertical1;} /* class2 */
+.vertical2-class2 {grid-area: vertical2;}
+.vertical1-class1, .vertical2-class1,
+.vertical1-class2, .vertical2-class2 {
+    flex-direction: column;
+    cursor: default;
+}
+/* NEGARA HORIZONTAL1 */
+.horizontal1-class1 div:nth-child(2), .horizontal1-class2 div:nth-child(2) 
+{background-image: url("../img/jerman.png");}
+.horizontal1-class1 div:nth-child(3), .horizontal1-class2 div:nth-child(3) 
+{background-image: url("../img/rusia.png");} 
+.horizontal1-class1 div:nth-child(4), .horizontal1-class2 div:nth-child(4) 
+{background-image: url("../img/italia.png");}
+.horizontal1-class1 div:nth-child(5), .horizontal1-class2 div:nth-child(5)
+{background-image: url("../img/inggris.png");}
+/* NEGARA HORIZONTAL2 */
+.horizontal2-class1 div:nth-child(2), .horizontal2-class2 div:nth-child(2) 
+{background-image: url("../img/singapura.png");}
+.horizontal2-class1 div:nth-child(3), .horizontal2-class2 div:nth-child(3) 
+{background-image: url("../img/thailand.png");}
+.horizontal2-class1 div:nth-child(4), .horizontal2-class2 div:nth-child(4)  
+{background-image: url("../img/malaysia.png");}
+.horizontal2-class1 div:nth-child(5), .horizontal2-class2 div:nth-child(5)  
+{background-image: url("../img/indonesia.png");}  
+/* NEGARA VERTICAL1 */
+.vertical1-class1 div:nth-child(1), .vertical1-class2 div:nth-child(1)  
+{background-image: url("../img/southAfrica.png");}
+.vertical1-class1 div:nth-child(3), .vertical1-class2 div:nth-child(3)  
+{background-image: url("../img/india.png");}
+.vertical1-class1 div:nth-child(4), .vertical1-class2 div:nth-child(4)  
+{background-image: url("../img/mesir.png");}
+/* NEGARA VERTICAL2 */
+.vertical2-class1 div:nth-child(1), .vertical2-class2 div:nth-child(1) 
+{background-image: url("../img/chile.png");}
+.vertical2-class1 div:nth-child(2), .vertical2-class2 div:nth-child(2)  
+{background-image: url("../img/brazil.png");}
+.vertical2-class1 div:nth-child(3), .vertical2-class2 div:nth-child(3)  
+{background-image: url("../img/canada.png");}
+.vertical2-class1 div:nth-child(4), .vertical2-class2 div:nth-child(4) 
+{background-image: url("../img/amerikaSerikat.png");}
+/* UKURAN NEGARA VERTICAL DAN HORIZONTAL */
+.horizontal1-class1 div, .horizontal2-class1 div, 
+.vertical1-class1 div, .vertical2-class1 div,
+.horizontal1-class2 div, .horizontal2-class2 div, 
+.vertical1-class2 div, .vertical2-class2 div {
+    width: 100px;
+    height: 100px;
+    border: 1px solid white;
+    box-sizing: border-box;
+}
+.horizontal1-class1 div:hover, .horizontal2-class1 div:hover,
+.vertical1-class1 div:hover, .vertical2-class1 div:hover,
+.horizontal1-class2 div:hover, .horizontal2-class2 div:hover,
+.vertical1-class2 div:hover, .vertical2-class2 div:hover {
+    cursor: pointer;
+}
+.vertical1-class1 div:nth-child(2), .vertical1-class2 div:nth-child(2) {
+    background-color: rgb(138, 138, 22);
+}
+.horizontal1-class1 div:nth-child(1), .horizontal1-class2 div:nth-child(1) {
+    background-color: darkblue;
+}
+.horizontal1-class1 div:nth-child(6), .horizontal1-class2 div:nth-child(6) {
+    background-color: pink;
+}
+.horizontal2-class1 div:nth-child(1), .horizontal2-class2 div:nth-child(1) {
+    background-color: darkred;
+}
+.horizontal2-class1 div:nth-child(6), .horizontal2-class2 div:nth-child(6) {
+    background-color: darkgreen;
+}
+.horizontal1-class1 div:nth-child(1), .horizontal2-class1 div:nth-child(1), 
+.horizontal2-class1 div:nth-child(6), .vertical1-class1 div:nth-child(2),
+.horizontal1-class2 div:nth-child(1), .horizontal2-class2 div:nth-child(1), 
+.horizontal2-class2 div:nth-child(6) .vertical1-class2 div:nth-child(2){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+}
+.horizontal1-class1, .horizontal2-class1,
+.vertical1-class1, .vertical2-class1 {
+    display: flex;
+}
+.horizontal1-class2, .horizontal2-class2,
+.vertical1-class2, .vertical2-class2 {
+    display: none;
+}
+@keyframes dice {
+    0% {rotate: 90deg}
+    25% {rotate: 180deg}
+    50% {rotate: 270deg}
+    75% {rotate: 360deg} 
+}

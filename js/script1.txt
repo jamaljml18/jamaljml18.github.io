@@ -1,0 +1,412 @@
+// QUERY SELECTOR
+
+// DICES
+    // PLUSD12
+const plusd12 = document.querySelector(".dices .plusd12")
+    // DiCE 1
+const dice1 = document.querySelector(".dices .dice1")
+    // DiCE 2
+const dice2 = document.querySelector(".dices .dice2")
+// PLAYER
+    // PLAYER 1
+const player1 = document.querySelector(".lingkaranPlayer .player1")
+    // PLAYER 2
+const player2 = document.querySelector(".lingkaranPlayer .player1")
+// BOARD UNTUK PLAYER 1
+    // HORIZONTAL 1
+const horizontal1_player1 = document.querySelector(".main_board .horizontal1-class1")
+    // HORIZONTAL 2
+const horizontal2_player1 = document.querySelector(".main_board .horizontal2-class1")
+    // VERTICAL 1
+const vertical1_player1 = document.querySelector(".main_board .vertical1-class1")
+    // VERTICAL 2
+const vertical2_player1 = document.querySelector(".main_board .vertical2-class1")
+// BOARD UNTUK PLAYER 2
+    // HORIZONTAL 1
+const horizontal1_player2 = document.querySelector(".main_board .horizontal1-class2")
+    // HORIZONTAL 2
+const horizontal2_player2 = document.querySelector(".main_board .horizontal2-class2")
+    // VERTICAL 1
+const vertical1_player2 = document.querySelector(".main_board .vertical1-class2")
+    // VERTICAL 2
+const vertical2_player2 = document.querySelector(".main_board .vertical2-class2")
+
+
+// VARIABLE PEMBANTU
+
+// DADU YANG BISA DISPIN DADU1 ATAU DADU2
+let dadu1_atau_dadu2 = true
+// UNTUK MENAMPUNG HASIL PENJUMLAHAN DICE1 DAN DICE2
+let diceIndex
+// KOORDINAT PEMAIN
+    // KOORDINAT X PEMAIN 1
+let posX_p1 = 835;
+    // KOORDINAT Y PEMAIN 1
+let posY_p1 = 565;
+    // KOORDINAT X PEMAIN 2
+let posX_p2 = 835;
+    // KOORDINAT Y PEMAIN 2
+let posY_p2 = 565;
+// PERUBAHAN UANG PLAYER 1
+let moneyPlayer1 = 0
+// PERUBAHAN UANG PLAYER 2
+let moneyPlayer2 = 0
+
+
+// FUNCTIONS
+
+// FUNCTION MENGAMBIL ANGKA RANDOM UNTUK DADU
+function randomDiceNumbers() {
+    let number = Math.random()*10
+    if (number >= 0 && number <= 10/6) {number = 1}
+    else if (number >= 0 && number <= 10/6*2) {number = 2}
+    else if (number > 10/6*2 && number <= 10/6*3) {number = 3}
+    else if (number > 10/6*3 && number <= 10/6*4) {number = 4}
+    else if (number > 10/6*4 && number <= 10/6*5) {number = 5}
+    else if (number > 10/6*5 && number <= 10) {number = 6}
+    return number
+}
+
+function moveP1PX() {
+    if (posX_p1 <= 835 && posX_p1 >= 335 && posY_p1 == 565) { 
+        posX_p1 = posX_p1 - diceIndex*100
+        posX_p12_perubahan = posX_p1 + "px"
+        player1.style.top = "565px"
+        player1.style.left = posX_p12_perubahan        
+        console.log("posX_p1 " + posX_p1 + " posY_p1 " + posY_p1)
+        if (posX_p1 <= 335) {
+            offset = 565 - Math.abs(335 - posX_p1)
+            posY_p1 = offset
+            posY_p12_perubahan = posY_p1 + "px"
+            player1.style.top = posY_p12_perubahan
+            player1.style.left = "335px"
+            posX_p1 = 335
+            console.log("posX_p1 " + posX_p1 + " posY_p1 " + posY_p1)
+            if (posY_p1 <= 65) {
+                offset = 335 + Math.abs(65 - posY_p1)
+                posX_p1 = offset
+                posX_p12_perubahan = posX_p1 + "px"
+                player1.style.top = "65px"
+                player1.style.left = posX_p12_perubahan
+                posY_p1 = 65
+                console.log("posX_p1 " + posX_p1 + " posY_p1 " + posY_p1)
+                if (posX_p1 >= 835) {
+                    offset = 65 + Math.abs(835 - posX_p1)
+                    posY_p1 = offset
+                    posY_p12_perubahan = posY_p1 + "px"
+                    player1.style.top = posY_p12_perubahan
+                    player1.style.left = "835px"
+                    posX_p1 = 835
+                    console.log("posX_p1 " + posX_p1 + " posY_p1 " + posY_p1)
+                }
+            }
+        }
+    }
+    else if (posX_p1 == 335 && posY_p1 <= 565 && posY_p1 >= 65) {
+        posY_p1 = posY_p1 - diceIndex*100
+        posY_p12_perubahan = posY_p1 + "px"
+        player1.style.top = posY_p12_perubahan
+        player1.style.left = "335px"
+        console.log("posX_p1 " + posX_p1 + " posY_p1 " + posY_p1)
+        if (posY_p1 <= 65) {
+            offset = 335 + Math.abs(65 - posY_p1)
+            posX_p1 = offset
+            posX_p12_perubahan = posX_p1 + "px"
+            player1.style.top = "65px"
+            player1.style.left = posX_p12_perubahan
+            posY_p1 = 65
+            console.log("posX_p1 " + posX_p1 + " posY_p1 " + posY_p1)
+            if (posX_p1 >= 835) {
+                offset = 65 + Math.abs(835 - posX_p1)
+                posY_p1 = offset
+                posY_p12_perubahan = posY_p1 + "px"
+                player1.style.top = posY_p12_perubahan
+                player1.style.left = "835px"
+                posX_p1 = 835
+                console.log("posX_p1 " + posX_p1 + " posY_p1 " + posY_p1)
+                if (posY_p1 >= 565) {
+                    offset = 835 - Math.abs(565 - posY_p1)
+                    posX_p1 = offset
+                    posX_p12_perubahan = posX_p1 + "px"
+                    player1.style.top = "565px"
+                    player1.style.left = posX_p12_perubahan
+                    posY_p1 = 565
+                    // KONDISI MELEWATI START
+                    moneyPlayer1 += 20
+                    money1_player1_tampilan.innerHTML = moneyPlayer1
+                    // AKHIR KONDISI MELEWATI START
+                    console.log("posX_p1 " + posX_p1 + " posY_p1 " + posY_p1)
+                }
+            }
+        }
+    }
+    else if (posX_p1 <= 835 && posX_p1 > 335 && posY_p1 == 65) {
+        posX_p1 = posX_p1 + diceIndex*100
+        posX_p12_perubahan = posX_p1 + "px"
+        player1.style.top = "65px"
+        player1.style.left = posX_p12_perubahan
+        console.log("posX_p1 " + posX_p1 + " posY_p1 " + posY_p1)
+        if (posX_p1 > 835) {
+            offset = 65 + Math.abs(835 - posX_p1)
+            posY_p1 = offset
+            posY_p12_perubahan = posY_p1 + "px"
+            player1.style.top = posY_p12_perubahan
+            player1.style.left = "835px"
+            posX_p1 = 835
+            console.log("posX_p1 " + posX_p1 + " posY_p1 " + posY_p1)
+            if (posY_p1 > 565) {
+                offset = 835 - Math.abs(565 - posY_p1)
+                posX_p1 = offset
+                posX_p12_perubahan = posX_p1 + "px"
+                player1.style.top = "565px"
+                player1.style.left = posX_p12_perubahan
+                posY_p1 = 565
+                // KONDISI MELEWATI START
+                moneyPlayer1 += 20
+                money1_player1_tampilan.innerHTML = moneyPlayer1
+                // AKHIR KONDISI MELEWATI START
+                console.log("posX_p1 " + posX_p1 + " posY_p1 " + posY_p1)
+                if (posX_p1 < 335) {
+                    offset = 565 - Math.abs(335 - posX_p1)
+                    posY_p1 = offset
+                    posY_p12_perubahan = posY_p1 + "px"
+                    player1.style.top = posY_p12_perubahan
+                    player1.style.left = "335px"
+                    posX_p1 = 335
+                    console.log("posX_p1 " + posX_p1 + " posY_p1 " + posY_p1)
+                }
+            }
+        }
+    }
+    else if (posX_p1 == 835 && posY_p1 <= 565 && posY_p1 >= 100) {
+        posY_p1 = posY_p1 + diceIndex*100
+        posY_p12_perubahan = posY_p1 + "px"
+        player1.style.top = posY_p12_perubahan
+        player1.style.left = "835px"
+        console.log("posX_p1 " + posX_p1 + " posY_p1 " + posY_p1)
+        if (posY_p1 > 565) {
+            offset = 835 - Math.abs(565 - posY_p1)
+            posX_p1 = offset
+            posX_p12_perubahan = posX_p1 + "px"
+            player1.style.top = "565px"
+            player1.style.left = posX_p12_perubahan
+            posY_p1 = 565
+            // KONDISI MELEWATI START
+            moneyPlayer1 += 20
+            money1_player1_tampilan.innerHTML = moneyPlayer1
+            // AKHIR KONDISI MELEWATI START
+            console.log("posX_p1 " + posX_p1 + " posY_p1 " + posY_p1)
+            ind()
+            if (posX_p1 < 335) {
+                offset = 565 - Math.abs(335 - posX_p1)
+                posY_p1 = offset
+                posY_p12_perubahan = posY_p1 + "px"
+                player1.style.top = posY_p12_perubahan
+                player1.style.left = "335px"
+                posX_p1 = 335
+                console.log("posX_p1 " + posX_p1 + " posY_p1 " + posY_p1)
+                if (posY_p1 < 100) {
+                    offset = 335 + Math.abs(65 - posY_p1)
+                    posX_p1 = offset
+                    posX_p12_perubahan = posX_p1 + "px"
+                    player1.style.top = "100px"
+                    player1.style.left = posX_p12_perubahan
+                    posY_p1 = 65
+                    console.log("posX_p1 " + posX_p1 + " posY_p1 " + posY_p1)
+                }
+            }
+        }
+    }
+}
+
+
+// DICES FUNCTION
+dice1.addEventListener("click", function(){
+    if (dadu1_atau_dadu2) {
+        dadu1_atau_dadu2 = false;
+        dice1.style.animation = "dice .2s infinite"
+        dice2.style.animation = "dice .2s infinite"
+        setTimeout(function() {
+            dice1.innerHTML = randomDiceNumbers()
+            dice1.style.animation = "none"
+            dice2.innerHTML = randomDiceNumbers()
+            dice2.style.animation = "none"
+            // KONDISI DI PENJARA
+            if (posX_p1 == 335 && posY_p1 == 565 && dice1.innerHTML != dice2.innerHTML) {
+                plusd12.innerHTML = "0"
+            } else {
+                plusd12.innerHTML = parseInt(dice1.innerHTML) + parseInt(dice2.innerHTML)
+            } 
+            // AKHIR KONDISI DI PENJARA
+            diceIndex = parseInt(plusd12.innerHTML)
+            moveP1PX()
+            dice1.style.cursor = "default"
+            dice2.style.cursor = "pointer"
+        }, 1200)
+    }
+})
+dice2.addEventListener("click", function(){
+    if (!dadu1_atau_dadu2) {
+        dadu1_atau_dadu2 = true;
+        dice1.style.animation = "dice .2s infinite"
+        dice2.style.animation = "dice .2s infinite"
+        setTimeout(function() {
+            dice1.innerHTML = randomDiceNumbers()
+            dice1.style.animation = "none"
+            dice2.innerHTML = randomDiceNumbers()
+            dice2.style.animation = "none"
+            // KONDISI DI PENJARA
+            if (posX_p2 == 335 && posY_p2 == 565 && dice1.innerHTML != dice2.innerHTML) {
+                plusd12.innerHTML = "0"
+            } else {
+                plusd12.innerHTML = parseInt(dice1.innerHTML) + parseInt(dice2.innerHTML)
+            }
+            // AKHIR KONDISI DI PENJARA
+            diceIndex = parseInt(plusd12.innerHTML)
+            dice1.style.cursor = "pointer"
+            dice2.style.cursor = "default"
+        }, 1200)
+    }
+})
+
+// QUERY SELECTOR
+
+// DICES
+    // PLUSD12
+const plusd12 = document.querySelector(".dices .plusd12")
+    // DiCE 1
+const dice1 = document.querySelector(".dices .dice1")
+    // DiCE 2
+const dice2 = document.querySelector(".dices .dice2")
+// PLAYER
+    // PLAYER 1
+const player1 = document.querySelector(".lingkaranPlayer .player1")
+    // PLAYER 2
+const player2 = document.querySelector(".lingkaranPlayer .player2")
+// BOARD UNTUK PLAYER 1
+    // HORIZONTAL 1
+const horizontal1_player1 = document.querySelector(".main_board .horizontal1-class1")
+    // HORIZONTAL 2
+const horizontal2_player1 = document.querySelector(".main_board .horizontal2-class1")
+    // VERTICAL 1
+const vertical1_player1 = document.querySelector(".main_board .vertical1-class1")
+    // VERTICAL 2
+const vertical2_player1 = document.querySelector(".main_board .vertical2-class1")
+// BOARD UNTUK PLAYER 2
+    // HORIZONTAL 1
+const horizontal1_player2 = document.querySelector(".main_board .horizontal1-class2")
+    // HORIZONTAL 2
+const horizontal2_player2 = document.querySelector(".main_board .horizontal2-class2")
+    // VERTICAL 1
+const vertical1_player2 = document.querySelector(".main_board .vertical1-class2")
+    // VERTICAL 2
+const vertical2_player2 = document.querySelector(".main_board .vertical2-class2")
+// PROFIL PLAYER 
+    // TAMPILAN UANG PLAYER 1
+const moneyPlayer1Tampilan = document.querySelector(".playerProfile1 .money_playerProfile1")
+    // TAMPILAN UANG PLAYER 2
+const moneyPlayer2Tampilan = document.querySelector(".playerProfile2 .money_playerProfile2")
+// INFORMATION COUNTRIES
+    // INDONESIA FULL INFORMATION
+const indonesiaTampilan = document.querySelector(".indonesia")
+    // INDONESIA EXIT INFORMATION
+const exitIndonesiaTampilan = document.querySelector(".indonesia .close")
+    // INDONESIA BELI PULAU
+const beliIndonesiaTampilan = document.querySelector(".indonesia .beli")
+
+// NEGARA HORIZONTAL 2
+const negaraIndonesia = document.querySelector(".horizontal2-class1 div:nth-child(5)")
+
+
+// VARIABLE PEMBANTU
+
+// DADU YANG BISA DISPIN DADU1 ATAU DADU2
+let dadu1_atau_dadu2 = true
+// UNTUK MENAMPUNG HASIL PENJUMLAHAN DICE1 DAN DICE2
+let diceIndex
+// KOORDINAT PEMAIN
+    // KOORDINAT X PEMAIN 1
+let posX_p1 = 835;
+    // KOORDINAT Y PEMAIN 1
+let posY_p1 = 465;
+    // KOORDINAT X PEMAIN 2
+let posX_p2 = 835;
+    // KOORDINAT Y PEMAIN 2
+let posY_p2 = 465;
+// PERUBAHAN UANG PLAYER 1
+let moneyPlayer1 = 50
+// PERUBAHAN UANG PLAYER 2
+let moneyPlayer2 = 50
+// INDEX PERUBAHAN POSISI PLAYER 1
+let posX_p1_perubahan = 0
+// INDEX PERUBAHAN POSISI PLAYER 2
+let posX_p2_perubahan = 0
+// INFORMASI NEGARA
+    // INDONESIA
+let indo_only = 10
+let indo_rumah = 5
+let indo_kota = 7
+let indo_pajak_only = 2
+let indo_pajak_rumah = 3
+let indo_pajak_kota = 4
+let apakah_indo_dibeli = false
+
+
+// FUNCTIONS
+
+// FUNCTION MENGAMBIL ANGKA RANDOM UNTUK DADU
+function randomDiceNumbers() {
+    let number = Math.random()*10
+    if (number >= 0 && number <= 10/6) {number = 1}
+    else if (number >= 0 && number <= 10/6*2) {number = 1}
+    else if (number > 10/6*2 && number <= 10/6*3) {number = 1}
+    else if (number > 10/6*3 && number <= 10/6*4) {number = 1}
+    else if (number > 10/6*4 && number <= 10/6*5) {number = 1}
+    else if (number > 10/6*5 && number <= 10) {number = 1}
+    return number
+}
+
+function p1BeliIndonesia() {
+    if ((posX_p1 == 735 && posY_p1 == 565) && 
+        (posX_p2 != 735 && (posY_p2 == 65 || posY_p2 == 165 || posY_p2 == 265 || 
+        posY_p2 == 365 || posY_p2 == 465 || posY_p2 == 565))) {
+        negaraIndonesia.addEventListener("click", function() {
+            indonesiaTampilan.style.display = "block"
+            beliIndonesiaTampilan.style.display = "none"
+            if (moneyPlayer1 >= indo_only && apakah_indo_dibeli == false) {
+                beliIndonesiaTampilan.style.display = "block"
+                beliIndonesiaTampilan.addEventListener("click", function() {
+                    moneyPlayer1 -= indo_only
+                    moneyPlayer1Tampilan.innerHTML = moneyPlayer1
+                    apakah_indo_dibeli = true
+                })
+            } else if (moneyPlayer1 < indo_only && apakah_indo_dibeli == true) {
+                beliIndonesiaTampilan.style.display = "none"
+            }
+        })
+    }
+    else if ((posX_p2 == 735 && posY_p2 == 565) && 
+        (posX_p1 != 735 && (posY_p1 == 65 || posY_p1 == 165 || posY_p1 == 265 || 
+        posY_p1 == 365 || posY_p1 == 465 || posY_p1 == 565))) {
+        negaraIndonesia.addEventListener("click", function() {
+            indonesiaTampilan.style.display = "block"
+            beliIndonesiaTampilan.style.display = "none"
+            if (moneyPlayer2 >= indo_only && apakah_indo_dibeli == false) {
+                beliIndonesiaTampilan.style.display = "block"
+                beliIndonesiaTampilan.addEventListener("click", function() {
+                    moneyPlayer2 -= indo_only
+                    moneyPlayer2Tampilan.innerHTML = moneyPlayer2
+                    apakah_indo_dibeli = true
+                })
+            } else if (moneyPlayer2 < indo_only && apakah_indo_dibeli == true) {
+                beliIndonesiaTampilan.style.display = "none"
+            }
+        })
+    }
+    else if ((posX_p1 == 735 && posX_p2 == 735 && posY_p2 == 565 && posY_p2 == 565)) {
+        negaraIndonesia.addEventListener("click", function() {
+            indonesiaTampilan.style.display = "block"
+            beliIndonesiaTampilan.style.display = "none"
+        })
+    }
+}
